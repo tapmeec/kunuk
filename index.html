@@ -61,7 +61,7 @@
             </p>
         </div>
 
-        <!-- Botones de Enlaces con Llamadas a la Acción (CTA) -->
+        <!-- Botones de Enlaces -->
         <div class="w-full space-y-3.5 px-2">
 
             <!-- Botón 1: Guardar Contacto (vCard) -->
@@ -71,8 +71,8 @@
                         <i class="fa-solid fa-address-book text-lg"></i>
                     </div>
                     <div>
-                        <span class="block text-sm sm:text-base font-semibold text-white">Guarda nuestro contacto</span>
-                        <span class="block text-xs text-gray-400">Descarga la vCard oficial</span>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Contacto vCard</span>
+                        <span class="block text-xs text-gray-400">Guarda nuestro contacto en tu agenda</span>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-[#E65F2B] transition-colors shrink-0"></i>
@@ -85,8 +85,8 @@
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                     </div>
                     <div>
-                        <span class="block text-sm sm:text-base font-semibold text-white">Realiza tu cotización</span>
-                        <span class="block text-xs text-gray-400">Atención directa por WhatsApp</span>
+                        <span class="block text-sm sm:text-base font-semibold text-white">WhatsApp</span>
+                        <span class="block text-xs text-gray-400">Realiza tu cotización directa</span>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-emerald-500 transition-colors shrink-0"></i>
@@ -99,12 +99,65 @@
                         <i class="fa-brands fa-instagram text-lg"></i>
                     </div>
                     <div>
-                        <span class="block text-sm sm:text-base font-semibold text-white">Explora nuestros proyectos</span>
-                        <span class="block text-xs text-gray-400">Síguenos en Instagram</span>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Instagram</span>
+                        <span class="block text-xs text-gray-400">Explora nuestros proyectos</span>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-pink-500 transition-colors shrink-0"></i>
             </a>
 
             <!-- Botón 4: Página Web -->
-            <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141
+            <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors shrink-0">
+                        <i class="fa-solid fa-globe text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Sitio Web</span>
+                        <span class="block text-xs text-gray-400">Conoce el catálogo completo</span>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-amber-500 transition-colors shrink-0"></i>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Footer / Créditos -->
+    <footer class="w-full text-center py-4 text-xs text-gray-500 relative z-10">
+        <p>© 2026 Kunuk Fireplace. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script optimizado para la descarga de la vCard -->
+    <script>
+        function downloadVCard() {
+            const vcardData = [
+                "BEGIN:VCARD",
+                "VERSION:3.0",
+                "FN:Kunuk - Calor de los Andes",
+                "ORG:Kunuk Fireplace",
+                "TEL;TYPE=WORK,VOICE:+593991881780",
+                "URL:https://www.kunuk.com.ec",
+                "NOTE:Diseño y Fabricación de Chimeneas Lujo Sustentable",
+                "ADR;TYPE=WORK:;;Quito;;;;Ecuador",
+                "END:VCARD"
+            ].join("\r\n");
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'kunuk_calor_de_los_andes.vcf');
+            document.body.appendChild(link);
+            link.click();
+            
+            setTimeout(() => {
+                document.body.removeChild(link);
+                window.URL.revokeObjectURL(url);
+            }, 100);
+        }
+    </script>
+</body>
+</html>
