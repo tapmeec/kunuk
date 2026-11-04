@@ -14,8 +14,9 @@
             background-color: #0A0A0A;
             color: #F3F4F6;
         }
+        /* Fondo con un difuminado naranja/fuego más cálido y vivo */
         .kunuk-gradient {
-            background: radial-gradient(circle at center, #1A120E 0%, #0A0A0A 100%);
+            background: radial-gradient(circle at 50% 25%, #2D1408 0%, #160A05 50%, #0A0A0A 100%);
         }
         .card-hover {
             transition: all 0.3s ease;
@@ -34,7 +35,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            box-shadow: inset 0 0 90px rgba(230, 95, 43, 0.15), inset 0 0 140px rgba(217, 119, 6, 0.08);
+            box-shadow: inset 0 0 120px rgba(230, 95, 43, 0.2), inset 0 0 180px rgba(217, 119, 6, 0.1);
         }
     </style>
 </head>
@@ -65,9 +66,9 @@
         <div class="w-full space-y-3.5 px-2">
 
             <!-- Botón 1: Guardar Contacto (vCard) -->
-            <button onclick="downloadVCard()" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group cursor-pointer shadow-lg text-left">
+            <button onclick="downloadVCard()" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414]/90 border border-[#2E1A12] rounded-xl text-white font-medium group cursor-pointer shadow-lg text-left backdrop-blur-sm">
                 <div class="flex items-center space-x-3.5">
-                    <div class="w-11 h-11 rounded-lg bg-[#E65F2B]/10 flex items-center justify-center text-[#E65F2B] group-hover:bg-[#E65F2B] group-hover:text-white transition-colors shrink-0">
+                    <div class="w-11 h-11 rounded-lg bg-[#E65F2B]/15 flex items-center justify-center text-[#E65F2B] group-hover:bg-[#E65F2B] group-hover:text-white transition-colors shrink-0">
                         <i class="fa-solid fa-address-book text-lg"></i>
                     </div>
                     <div>
@@ -79,9 +80,9 @@
             </button>
 
             <!-- Botón 2: WhatsApp -->
-            <a href="https://wa.me/593991881780" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
+            <a href="https://wa.me/593991881780" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414]/90 border border-[#2E1A12] rounded-xl text-white font-medium group shadow-lg backdrop-blur-sm">
                 <div class="flex items-center space-x-3.5">
-                    <div class="w-11 h-11 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-colors shrink-0">
+                    <div class="w-11 h-11 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-colors shrink-0">
                         <i class="fa-brands fa-whatsapp text-xl"></i>
                     </div>
                     <div>
@@ -93,9 +94,9 @@
             </a>
 
             <!-- Botón 3: Instagram -->
-            <a href="https://instagram.com/kunukfireplace" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
+            <a href="https://instagram.com/kunukfireplace" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414]/90 border border-[#2E1A12] rounded-xl text-white font-medium group shadow-lg backdrop-blur-sm">
                 <div class="flex items-center space-x-3.5">
-                    <div class="w-11 h-11 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors shrink-0">
+                    <div class="w-11 h-11 rounded-lg bg-pink-500/15 flex items-center justify-center text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors shrink-0">
                         <i class="fa-brands fa-instagram text-lg"></i>
                     </div>
                     <div>
@@ -107,9 +108,9 @@
             </a>
 
             <!-- Botón 4: Página Web -->
-            <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
+            <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414]/90 border border-[#2E1A12] rounded-xl text-white font-medium group shadow-lg backdrop-blur-sm">
                 <div class="flex items-center space-x-3.5">
-                    <div class="w-11 h-11 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors shrink-0">
+                    <div class="w-11 h-11 rounded-lg bg-amber-500/15 flex items-center justify-center text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors shrink-0">
                         <i class="fa-solid fa-globe text-lg"></i>
                     </div>
                     <div>
@@ -124,7 +125,7 @@
 
         <!-- Footer con el Logo de Tap Me en w-36 y enlace exclusivo -->
         <footer class="w-full text-center pt-2 pb-4 flex flex-col items-center justify-center space-y-1">
-            <span class="text-[10px] tracking-widest uppercase text-gray-500 font-medium">Powered by</span>
+            <span class="text-[10px] tracking-widest uppercase text-gray-400 font-medium">Powered by</span>
             <a href="https://wa.me/593988725270" target="_blank" rel="noopener noreferrer" class="opacity-90 hover:opacity-100 transition-opacity">
                 <img src="logotapmeblanco.png" alt="Tap Me Logo" class="w-36 object-contain">
             </a>
