@@ -71,8 +71,8 @@
                         <i class="fa-solid fa-address-book text-lg"></i>
                     </div>
                     <div>
-                        <span class="block text-sm sm:text-base font-semibold text-white">Contacto vCard</span>
-                        <span class="block text-xs text-gray-400">Guarda nuestro contacto en tu agenda</span>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Guardar contacto</span>
+                        <span class="block text-xs text-gray-400">Guarda nuestro contacto en tu app de contactos</span>
                     </div>
                 </div>
                 <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-[#E65F2B] transition-colors shrink-0"></i>
@@ -129,13 +129,14 @@
         <p>© 2026 Kunuk Fireplace. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Script optimizado para la descarga de la vCard -->
+    <!-- Script optimizado para forzar el nombre completo en la vCard -->
     <script>
         function downloadVCard() {
             const vcardData = [
                 "BEGIN:VCARD",
                 "VERSION:3.0",
                 "FN:Kunuk - Calor de los Andes",
+                "N:Andes;Kunuk - Calor de los;;;",
                 "ORG:Kunuk Fireplace",
                 "TEL;TYPE=WORK,VOICE:+593991881780",
                 "URL:https://www.kunuk.com.ec",
