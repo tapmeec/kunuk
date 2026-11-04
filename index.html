@@ -34,7 +34,7 @@
             height: 100%;
             pointer-events: none;
             z-index: 0;
-            box-shadow: inset 0 0 80px rgba(230, 95, 43, 0.12), inset 0 0 120px rgba(217, 119, 6, 0.08);
+            box-shadow: inset 0 0 90px rgba(230, 95, 43, 0.15), inset 0 0 140px rgba(217, 119, 6, 0.08);
         }
     </style>
 </head>
@@ -46,69 +46,78 @@
     <!-- Contenedor Principal -->
     <main class="w-full max-w-md mx-auto flex flex-col items-center space-y-6 my-auto py-8 relative z-10">
         
-        <!-- Foto de Perfil (Grande, sin bordes blancos y con halo de fuego) -->
+        <!-- Foto de Perfil (Más grande, sin bordes blancos y con halo de fuego intenso) -->
         <div class="relative">
-            <div class="absolute -inset-1.5 bg-gradient-to-r from-[#E65F2B] to-[#D97706] rounded-full blur-lg opacity-80 animate-pulse"></div>
-            <div class="relative w-36 h-36 rounded-full overflow-hidden border-2 border-[#331C12] shadow-2xl bg-black flex items-center justify-center">
+            <div class="absolute -inset-2 bg-gradient-to-r from-[#E65F2B] to-[#D97706] rounded-full blur-xl opacity-80 animate-pulse"></div>
+            <div class="relative w-40 h-40 rounded-full overflow-hidden border-2 border-[#331C12] shadow-2xl bg-black flex items-center justify-center">
                 <img src="logokunuk.png" alt="Kunuk Fireplace Logo" class="w-full h-full object-cover scale-105">
             </div>
         </div>
 
-        <!-- Información del Negocio -->
-        <div class="text-center space-y-2">
-            <h1 class="text-2xl font-bold tracking-tight text-white">
-                Kunuk Fireplace
-            </h1>
-            <p class="text-sm text-gray-300 max-w-xs mx-auto">
+        <!-- Descripción breve del negocio -->
+        <div class="text-center px-2">
+            <p class="text-sm text-gray-300 max-w-xs mx-auto leading-relaxed">
                 Diseño y Fabricación de Chimeneas de Lujo Sustentable | Chimeneas y Estufas Eficientes. Quito, Ecuador 📍
             </p>
         </div>
 
-        <!-- Botones de Enlaces -->
+        <!-- Botones de Enlaces con Llamadas a la Acción (CTA) -->
         <div class="w-full space-y-3.5 px-2">
 
             <!-- Botón 1: Guardar Contacto (vCard) -->
-            <button onclick="downloadVCard()" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group cursor-pointer shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-[#E65F2B]/10 flex items-center justify-center text-[#E65F2B] group-hover:bg-[#E65F2B] group-hover:text-white transition-colors">
+            <button onclick="downloadVCard()" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group cursor-pointer shadow-lg text-left">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-[#E65F2B]/10 flex items-center justify-center text-[#E65F2B] group-hover:bg-[#E65F2B] group-hover:text-white transition-colors shrink-0">
                         <i class="fa-solid fa-address-book text-lg"></i>
                     </div>
-                    <span class="text-sm sm:text-base">Guardar Contacto</span>
+                    <div>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Guarda nuestro contacto</span>
+                        <span class="block text-xs text-gray-400">Descarga la vCard oficial</span>
+                    </div>
                 </div>
-                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-[#E65F2B] transition-colors"></i>
+                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-[#E65F2B] transition-colors shrink-0"></i>
             </button>
 
             <!-- Botón 2: WhatsApp -->
             <a href="https://wa.me/593995856403" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
-                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-colors shrink-0">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
                     </div>
-                    <span class="text-sm sm:text-base">Escríbenos por WhatsApp</span>
+                    <div>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Realiza tu cotización</span>
+                        <span class="block text-xs text-gray-400">Atención directa por WhatsApp</span>
+                    </div>
                 </div>
-                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-emerald-500 transition-colors"></i>
+                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-emerald-500 transition-colors shrink-0"></i>
             </a>
 
             <!-- Botón 3: Instagram -->
             <a href="https://instagram.com/kunukfireplace" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors shrink-0">
                         <i class="fa-brands fa-instagram text-lg"></i>
                     </div>
-                    <span class="text-sm sm:text-base">Síguenos en Instagram</span>
+                    <div>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Explora nuestros proyectos</span>
+                        <span class="block text-xs text-gray-400">Síguenos en Instagram</span>
+                    </div>
                 </div>
-                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-pink-500 transition-colors"></i>
+                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-pink-500 transition-colors shrink-0"></i>
             </a>
 
             <!-- Botón 4: Página Web -->
             <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
-                <div class="flex items-center space-x-3">
-                    <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors shrink-0">
                         <i class="fa-solid fa-globe text-lg"></i>
                     </div>
-                    <span class="text-sm sm:text-base">Visita nuestra Web</span>
+                    <div>
+                        <span class="block text-sm sm:text-base font-semibold text-white">Visita nuestro sitio web</span>
+                        <span class="block text-xs text-gray-400">Conoce el catálogo completo</span>
+                    </div>
                 </div>
-                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-amber-500 transition-colors"></i>
+                <i class="fa-solid fa-arrow-right text-gray-500 group-hover:text-amber-500 transition-colors shrink-0"></i>
             </a>
 
         </div>
