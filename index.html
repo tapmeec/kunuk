@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunuk Fireplace | Linkbio</title>
+    <!-- Tailwind CSS v4 para un diseño moderno y responsivo -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0b0b;
+            color: #F3F4F6;
+        }
+
+        /* Fondo con gradiente inspirado en los tonos fuego, carbón y madera */
+        .kunuk-gradient {
+            background: radial-gradient(circle at top, #1c1512 0%, #0d0d0d 60%, #080808 100%);
+        }
+
+        /* Animación y efecto hover elegante para las tarjetas de botones */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: #E65F2B;
+            background: linear-gradient(135deg, rgba(31, 31, 31, 0.9) 0%, rgba(20, 20, 20, 0.95) 100%);
+            box-shadow: 0 12px 30px -8px rgba(230, 95, 43, 0.25);
+        }
+
+        /* Animación sutil para el avatar de fuego */
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.7; transform: scale(1); }
+            50% { opacity: 0.95; transform: scale(1.03); }
+        }
+        .avatar-glow {
+            animation: pulse-glow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-4 sm:p-6 kunuk-gradient selection:bg-[#E65F2B] selection:text-white">
+
+    <!-- Contenedor Principal del Linkbio -->
+    <main class="w-full max-w-md mx-auto flex flex-col items-center space-y-6 my-auto py-8">
+        
+        <!-- Foto de Perfil con Anillo Resplandeciente -->
+        <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-tr from-[#E65F2B] via-[#D97706] to-[#b43403] rounded-full blur-md opacity-80 avatar-glow"></div>
+            <img 
+                src="logokunuk.png" 
+                alt="Kunuk Fireplace Logo" 
+                onerror="this.src='https://placehold.co/200x200/1a1a1a/E65F2B?text=KUNUK'"
+                class="relative w-30 h-30 rounded-full object-cover border-2 border-[#2b221e] shadow-2xl bg-[#141414]"
+            >
+        </div>
+
+        <!-- Información y Biografía del Negocio -->
+        <div class="text-center space-y-2.5 px-2">
+            <div class="inline-flex items-center gap-2 bg-[#E65F2B]/10 border border-[#E65F2B]/20 px-3 py-1 rounded-full text-xs font-semibold text-[#E65F2B] uppercase tracking-wider mb-1">
+                <i class="fa-solid fa-fire text-[10px]"></i> Calor de los Andes
+            </div>
+            <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+                Kunuk Fireplace
+            </h1>
+            <p class="text-xs sm:text-sm text-gray-300 max-w-xs mx-auto leading-relaxed">
+                Diseño y Fabricación de Chimeneas de Lujo Sustentable 🔥<br>
+                Estufas eficientes • Quito, Ecuador 📍
+            </p>
+        </div>
+
+        <!-- Botones de Enlaces Interactivos -->
+        <div class="w-full space-y-3.5 px-2">
+
+            <!-- 1. Botón Guardar Contacto (vCard) -->
+            <button onclick="downloadVCard()" class="card-hover w-full flex items-center justify-between p-4 bg-[#161616]/90 border border-[#262626] rounded-xl text-white font-medium group cursor-pointer shadow-lg backdrop-blur-sm">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-[#E65F2B]/15 flex items-center justify-center text-[#E65F2B] group-hover:bg-[#E65F2B] group-hover:text-white transition-all duration-300 shadow-inner">
+                        <i class="fa-solid fa-address-book text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-sm sm:text-base font-semibold text-gray-100 group-hover:text-white">Guardar Contacto</span>
+                        <span class="block text-[11px] text-gray-400">Descargar vCard para agenda</span>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#E65F2B]/20 transition-colors">
+                    <i class="fa-solid fa-arrow-right text-xs text-gray-400 group-hover:text-[#E65F2B] transition-colors"></i>
+                </div>
+            </button>
+
+            <!-- 2. Botón WhatsApp -->
+            <a href="https://wa.me/593990000000" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#161616]/90 border border-[#262626] rounded-xl text-white font-medium group shadow-lg backdrop-blur-sm">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-emerald-500/15 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-600 group-hover:text-white transition-all duration-300 shadow-inner">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-sm sm:text-base font-semibold text-gray-100 group-hover:text-white">Escríbenos por WhatsApp</span>
+                        <span class="block text-[11px] text-gray-400">Atención personalizada y cotizaciones</span>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
+                    <i class="fa-solid fa-arrow-right text-xs text-gray-400 group-hover:text-emerald-400 transition-colors"></i>
+                </div>
+            </a>
+
+            <!-- 3. Botón Instagram -->
+            <a href="https://instagram.com/kunukfireplace" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#161616]/90 border border-[#262626] rounded-xl text-white font-medium group shadow-lg backdrop-blur-sm">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-pink-500/15 flex items-center justify-center text-pink-400 group-hover:bg-pink-600 group-hover:text-white transition-all duration-300 shadow-inner">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-sm sm:text-base font-semibold text-gray-100 group-hover:text-white">Síguenos en Instagram</span>
+                        <span class="block text-[11px] text-gray-400">@kunukfireplace</span>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
+                    <i class="fa-solid fa-arrow-right text-xs text-gray-400 group-hover:text-pink-400 transition-colors"></i>
+                </div>
+            </a>
+
+            <!-- 4. Botón Página Web -->
+            <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#161616]/90 border border-[#262626] rounded-xl text-white font-medium group shadow-lg backdrop-blur-sm">
+                <div class="flex items-center space-x-3.5">
+                    <div class="w-11 h-11 rounded-lg bg-amber-500/15 flex items-center justify-center text-amber-400 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300 shadow-inner">
+                        <i class="fa-solid fa-globe text-lg"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-sm sm:text-base font-semibold text-gray-100 group-hover:text-white">Sitio Web Oficial</span>
+                        <span class="block text-[11px] text-gray-400">www.kunuk.com.ec</span>
+                    </div>
+                </div>
+                <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-amber-500/20 transition-colors">
+                    <i class="fa-solid fa-arrow-right text-xs text-gray-400 group-hover:text-amber-400 transition-colors"></i>
+                </div>
+            </a>
+
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="w-full text-center py-4 text-xs text-gray-500 border-t border-[#1a1a1a]">
+        <p>© 2026 Kunuk Fireplace • Calor de los Andes. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script JavaScript para descarga de la vCard y efectos -->
+    <script>
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Kunuk Fireplace
+ORG:Kunuk - Calor de los Andes
+TITLE:Fabricación de Chimeneas Sustentables
+TEL;TYPE=WORK,VOICE:+593990000000
+URL:https://www.kunuk.com.ec
+NOTE:Diseño y Fabricación de Chimeneas de Lujo Sustentable | Garantía 5 Años
+ADDRESS:;;Quito;;;;Ecuador
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard;charset=utf-8;' });
+            const url = window.URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'kunuk_fireplace.vcf');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
