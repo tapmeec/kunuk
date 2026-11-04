@@ -11,11 +11,11 @@
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #121212;
+            background-color: #0A0A0A;
             color: #F3F4F6;
         }
         .kunuk-gradient {
-            background: linear-gradient(135deg, #1A1A1A 0%, #0D0D0D 100%);
+            background: radial-gradient(circle at center, #1A120E 0%, #0A0A0A 100%);
         }
         .card-hover {
             transition: all 0.3s ease;
@@ -23,19 +23,33 @@
         .card-hover:hover {
             transform: translateY(-3px);
             border-color: #E65F2B;
-            box-shadow: 0 10px 25px -5px rgba(230, 95, 43, 0.2);
+            box-shadow: 0 10px 25px -5px rgba(230, 95, 43, 0.25);
+        }
+        /* Efecto de resplandor de fuego en los bordes de la pantalla */
+        .fire-ambient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            box-shadow: inset 0 0 80px rgba(230, 95, 43, 0.12), inset 0 0 120px rgba(217, 119, 6, 0.08);
         }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-between p-4 sm:p-6 kunuk-gradient">
+<body class="min-h-screen flex flex-col items-center justify-between p-4 sm:p-6 kunuk-gradient relative overflow-x-hidden">
+
+    <!-- Ambientación de fuego en los bordes -->
+    <div class="fire-ambient"></div>
 
     <!-- Contenedor Principal -->
-    <main class="w-full max-w-md mx-auto flex flex-col items-center space-y-6 my-auto py-8">
+    <main class="w-full max-w-md mx-auto flex flex-col items-center space-y-6 my-auto py-8 relative z-10">
         
-        <!-- Foto de Perfil (Más grande, con desbordamiento oculto para evitar filos blancos) -->
+        <!-- Foto de Perfil (Grande, sin bordes blancos y con halo de fuego) -->
         <div class="relative">
-            <div class="absolute -inset-1 bg-gradient-to-r from-[#E65F2B] to-[#D97706] rounded-full blur-md opacity-75"></div>
-            <div class="relative w-36 h-36 rounded-full overflow-hidden border-2 border-[#262626] shadow-2xl bg-black flex items-center justify-center">
+            <div class="absolute -inset-1.5 bg-gradient-to-r from-[#E65F2B] to-[#D97706] rounded-full blur-lg opacity-80 animate-pulse"></div>
+            <div class="relative w-36 h-36 rounded-full overflow-hidden border-2 border-[#331C12] shadow-2xl bg-black flex items-center justify-center">
                 <img src="logokunuk.png" alt="Kunuk Fireplace Logo" class="w-full h-full object-cover scale-105">
             </div>
         </div>
@@ -54,7 +68,7 @@
         <div class="w-full space-y-3.5 px-2">
 
             <!-- Botón 1: Guardar Contacto (vCard) -->
-            <button onclick="downloadVCard()" class="card-hover w-full flex items-center justify-between p-4 bg-[#1F1F1F] border border-[#2E2E2E] rounded-xl text-white font-medium group cursor-pointer">
+            <button onclick="downloadVCard()" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group cursor-pointer shadow-lg">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-lg bg-[#E65F2B]/10 flex items-center justify-center text-[#E65F2B] group-hover:bg-[#E65F2B] group-hover:text-white transition-colors">
                         <i class="fa-solid fa-address-book text-lg"></i>
@@ -65,7 +79,7 @@
             </button>
 
             <!-- Botón 2: WhatsApp -->
-            <a href="https://wa.me/593995856403" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#1F1F1F] border border-[#2E2E2E] rounded-xl text-white font-medium group">
+            <a href="https://wa.me/593995856403" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
                         <i class="fa-brands fa-whatsapp text-lg"></i>
@@ -76,7 +90,7 @@
             </a>
 
             <!-- Botón 3: Instagram -->
-            <a href="https://instagram.com/kunukfireplace" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#1F1F1F] border border-[#2E2E2E] rounded-xl text-white font-medium group">
+            <a href="https://instagram.com/kunukfireplace" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-lg bg-pink-500/10 flex items-center justify-center text-pink-500 group-hover:bg-pink-600 group-hover:text-white transition-colors">
                         <i class="fa-brands fa-instagram text-lg"></i>
@@ -87,7 +101,7 @@
             </a>
 
             <!-- Botón 4: Página Web -->
-            <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#1F1F1F] border border-[#2E2E2E] rounded-xl text-white font-medium group">
+            <a href="https://www.kunuk.com.ec" target="_blank" rel="noopener noreferrer" class="card-hover w-full flex items-center justify-between p-4 bg-[#141414] border border-[#262626] rounded-xl text-white font-medium group shadow-lg">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 rounded-lg bg-amber-500/10 flex items-center justify-center text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors">
                         <i class="fa-solid fa-globe text-lg"></i>
@@ -102,17 +116,17 @@
     </main>
 
     <!-- Footer / Créditos -->
-    <footer class="w-full text-center py-4 text-xs text-gray-500">
+    <footer class="w-full text-center py-4 text-xs text-gray-500 relative z-10">
         <p>© 2026 Kunuk Fireplace. Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Script para generar y descargar la vCard (Guardar contacto) -->
+    <!-- Script para generar y descargar la vCard -->
     <script>
         function downloadVCard() {
             const vcardData = `BEGIN:VCARD
 VERSION:3.0
-FN:Kunuk Fireplace
-ORG:Kunuk - Calor de los Andes
+FN:Kunuk - Calor de los Andes
+ORG:Kunuk Fireplace
 TEL;TYPE=WORK,VOICE:+593995856403
 URL:https://www.kunuk.com.ec
 NOTE:Diseño y Fabricación de Chimeneas Lujo Sustentable
@@ -123,7 +137,7 @@ END:VCARD`;
             const url = window.URL.createObjectURL(blob);
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'kunuk_fireplace.vcf');
+            link.setAttribute('download', 'kunuk_calor_de_los_andes.vcf');
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
