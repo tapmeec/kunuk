@@ -123,25 +123,25 @@
 
         </div>
 
-        <!-- Footer con el Logo de Tap Me en w-36 y enlace exclusivo -->
-        <footer class="w-full text-center pt-2 pb-4 flex flex-col items-center justify-center space-y-1">
-            <span class="text-[10px] tracking-widest uppercase text-gray-400 font-medium">Powered by</span>
-            <a href="https://wa.me/593988725270" target="_blank" rel="noopener noreferrer" class="opacity-90 hover:opacity-100 transition-opacity">
-                <img src="logotapmeblanco.png" alt="Tap Me Logo" class="w-36 object-contain">
-            </a>
-        </footer>
-
     </main>
 
-    <!-- Script optimizado para la descarga de la vCard -->
+    <!-- Footer con el Logo de Tap Me en w-36 y enlace exclusivo -->
+    <footer class="w-full text-center pt-2 pb-4 flex flex-col items-center justify-center space-y-1">
+        <span class="text-[10px] tracking-widest uppercase text-gray-400 font-medium">Powered by</span>
+        <a href="https://wa.me/593988725270" target="_blank" rel="noopener noreferrer" class="opacity-90 hover:opacity-100 transition-opacity">
+            <img src="logotapmeblanco.png" alt="Tap Me Logo" class="w-36 object-contain">
+        </a>
+    </footer>
+
+    <!-- Script optimizado para la descarga de la vCard con KUNUK en mayúsculas -->
     <script>
         function downloadVCard() {
             const vcardData = [
                 "BEGIN:VCARD",
                 "VERSION:3.0",
-                "FN:Kunuk - Calor de los Andes",
-                "N:Andes;Kunuk - Calor de los;;;",
-                "ORG:Kunuk Fireplace",
+                "FN:KUNUK - Calor de los Andes",
+                "N:Andes;KUNUK - Calor de los;;;",
+                "ORG:KUNUK Fireplace",
                 "TEL;TYPE=WORK,VOICE:+593991881780",
                 "URL:https://www.kunuk.com.ec",
                 "NOTE:Diseño y Fabricación de Chimeneas Lujo Sustentable",
@@ -154,7 +154,7 @@
             
             const link = document.createElement('a');
             link.href = url;
-            link.setAttribute('download', 'kunuk_calor_de_los_andes.vcf');
+            link.setAttribute('download', 'KUNUK_calor_de_los_andes.vcf');
             document.body.appendChild(link);
             link.click();
             
